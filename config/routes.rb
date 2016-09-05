@@ -1,5 +1,8 @@
 Grammable::Application.routes.draw do
   root "grams#index"
+  resources :grams, only: [:new, :create]
+  #resources :grams, only: :create  didnt do this wanted more general
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

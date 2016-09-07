@@ -2,7 +2,7 @@ class GramsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 	
 	def index
-		#@grams = Gram.all
+		@grams = Gram.all
 	end
 
 	def new
@@ -16,6 +16,13 @@ class GramsController < ApplicationController
 		else
 			render :new, status: :unprocessable_entity
 		end
+	end
+
+	def show
+		@gram = Gram.find_by_id(params[:id])
+		if @gram.blank?
+    		render text: 'I could not find the Gram you wanted :(', status: :not_found
+  		end
 	end
 
 	private

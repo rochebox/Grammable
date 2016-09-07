@@ -1,1 +1,10 @@
 <h1>Welcome to the show page...for a gram</h1>
+<!-- following Nomster lesson 22 -->
+
+<div>
+  <h1><%= @gram.message %></h1>
+ 
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_gram_path(@gram), class: 'btn btn-primary' %>
+  </div>
+</div>

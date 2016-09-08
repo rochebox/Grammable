@@ -59,3 +59,5 @@ gem 'devise', '>= 3.2.4'
 gem 'carrierwave', '0.11.0'
 gem 'figaro'
 gem 'fog'
+gem 'mini_magick', '~> 4.3.1'
+

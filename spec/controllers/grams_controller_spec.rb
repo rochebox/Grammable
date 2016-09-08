@@ -162,11 +162,15 @@ RSpec.describe GramsController, type: :controller do
 			user = FactoryGirl.create(:user)
       		sign_in user
 
-			post :create, gram: { message: 'Hello!' }
-			expect(response).to redirect_to root_path
+			post :create, gram: { 
+				message: 'Hello!',
+     			picture: fixture_file_upload("/picture.jpg", 'image/jpg')
+				 }
 
-			gram = Gram.last
-			expect(gram.message).to eq("Hello!")
+				expect(response).to redirect_to root_path
+
+				gram = Gram.last
+				expect(gram.message).to eq("Hello!")
 		end
 
 		it "should properly deal with validation errors" do

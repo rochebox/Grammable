@@ -3,6 +3,9 @@
 
 <% @grams.each do |gram| %>
   <div>
-    <h1><%= link_to gram.message, gram_path(gram) %></h1><br />
+  	<% if gram.picture != nil %>
+  		<p> <%= image_tag gram.picture, :class => "index-width" %> </p>
+  	<% end %>
+    <h1> <%= link_to gram.message, gram_path(gram) %> </h1> <br />
   </div>
 <% end %>

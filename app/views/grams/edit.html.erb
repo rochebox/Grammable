@@ -1,6 +1,7 @@
 <h1>Edit Your Gram!!!!!</h1>
-
+<p> <%= image_tag @gram.picture, :class => "show-edit-width" %> </p>
 <%= simple_form_for @gram do |f| %>
+  <%= f.input :picture, input_html: { class: "" } %>
   <%= f.input :message %>
   <%= f.submit "Update!", class: 'btn btn-primary' %>
 <% end %>

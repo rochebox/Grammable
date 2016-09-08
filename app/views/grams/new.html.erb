@@ -1,6 +1,7 @@
 <h1>Enter Your Gram Form Things Here</h1>
 
 <%= simple_form_for @gram do |f| %>
-  <%= f.input :message %>
+  <%= f.input :picture, input_html: { class: "" } %>
+  <%= f.input :message, input_html: { class: "" }%>
   <%= f.submit "Post!", class: 'btn btn-primary' %>
 <% end %>

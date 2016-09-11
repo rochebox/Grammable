@@ -4,7 +4,9 @@ Grammable::Application.routes.draw do
   #resources :grams, only: [:new, :create, :show, :edit, :update, :destroy]
   #resources :grams, only: :create  didnt do this wanted more general
   # all the REST ful
-  resources :grams
+  resources :grams do
+    resources :comments, only: :create
+  end
 
   
   # The priority is based upon order of creation: first created -> highest priority.

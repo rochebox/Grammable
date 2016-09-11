@@ -11,3 +11,21 @@
     <%= link_to 'Destroy', gram_path(@gram), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
   </div>
 </div>
+<div class="clear"></div>
+<div>
+	<%= simple_form_for @comment, url: gram_comments_path(@gram) do |f| %>
+	  <%= f.input :message %>
+	  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+	<% end %>
+</div>
+
+<h1>Comments</h1>
+
+<% @gram.comments.each do |comment| %>
+  <div>
+    <blockquote>
+        <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>

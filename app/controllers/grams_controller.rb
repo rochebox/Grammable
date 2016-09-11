@@ -62,8 +62,6 @@ class GramsController < ApplicationController
 		render text: '#{message} :(', status: :not_found
 	end
 
-	def render_not_found_really(status=:not_found)
-    	render text: "#{status.to_s.titleize} :(", status: status
-  	end
+
 
 end
